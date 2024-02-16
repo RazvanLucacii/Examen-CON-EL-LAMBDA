@@ -1,0 +1,44 @@
+﻿@model List<Comic>
+
+
+<div class="container mt-5">
+    <h1>Comics SQL y Oracle</h1>
+    <p>
+        <a class="btn btn-info" asp-controller="Comics" asp-action="Create">
+            Crear Comic
+        </a>
+    </p>
+    <hr/>
+    <p>
+        <a asp-action="Detalles" asp-controller="Comics" class="btn btn-primary">
+            Buscador
+        </a>
+    </p>
+    <hr/>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Imagen</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Comic com in Model)
+            {
+                <tr>
+                    <td>@com.Nombre</td>
+                    <td>@com.Descripcion</td>
+                    <td><img src="@com.Imagen" style="width: 250px; height: 300px" /></td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Delete" asp-controller="Comics" asp-route-idComic="@com.IdComic">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

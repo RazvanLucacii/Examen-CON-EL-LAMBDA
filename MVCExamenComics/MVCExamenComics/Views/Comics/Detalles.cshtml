@@ -1,0 +1,46 @@
+﻿@model Comic
+
+@{
+    List<string> nombres = ViewData["NOMBRES"] as List<string>;
+}
+
+<div class="container mt-5">
+    <h1>Detalles Comic</h1>
+
+    <p>
+        <a asp-controller="Comics" asp-action="Index" class="btn btn-info">
+            Atras
+        </a>
+    </p>
+
+    <form method="post">
+        <select name="nombre">
+            @foreach (string nombre in nombres)
+            {
+                <option value="@nombre">
+                    @nombre
+                </option>
+            }
+        </select>
+        <br />
+        <br />
+        <button class="btn btn-success">
+            Mostrar Detalles
+        </button>
+    </form> 
+    <hr />
+    @if (Model != null)
+    {
+        <ul class="list-group">
+            <li class="list-group-item">
+                Nombre: @Model.Nombre
+            </li>
+            <li class="list-group-item">
+                Descripcion: @Model.Descripcion
+            </li>
+            <li class="list-group-item">
+                <img src="@Model.Imagen" style="width: 400px; height: 350px" />
+            </li>
+        </ul>
+    }
+</div>

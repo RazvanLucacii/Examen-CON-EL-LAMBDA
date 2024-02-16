@@ -1,0 +1,25 @@
+﻿@model Comic
+
+<div class="container mt-5">
+    <h1>Delete Comic</h1>
+
+    <p>
+        <a asp-controller="Comics" asp-action="Index" class="btn btn-info">
+            Atras
+        </a>
+    </p>
+
+    <form method="post" asp-action="DeletePost" asp-controller="Comics">
+        <label>Id Comic: </label>
+        <input class="form-control" type="number" value="@Model.IdComic" readonly/>
+        <label>Nombre: </label>
+        <input class="form-control" type="text" value="@Model.Nombre" readonly />
+        <label>Imagen: </label>
+        <input class="form-control" type="text" value="@Model.Imagen" readonly />
+        <label>Descripcion: </label>
+        <input class="form-control" type="text" value="@Model.Descripcion" readonly />
+        <button class="btn btn-success">
+            Eliminar
+        </button>
+    </form>
+</div>

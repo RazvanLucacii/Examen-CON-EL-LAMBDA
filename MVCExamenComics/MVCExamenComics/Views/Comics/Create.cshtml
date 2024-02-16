@@ -1,0 +1,37 @@
+﻿﻿<div class="container mt-5">
+    <h1>Nuevo Comic</h1>
+
+    <p>
+        <a asp-controller="Comics" asp-action="Index" class="btn btn-info">
+            Atras
+        </a>
+    </p>
+    <hr/>
+    <h1>Create procedure</h1>
+    <form method="post" asp-action="CreateProcedure">
+        <input type="hidden" name="idComic"/>
+        <label>Nombre</label>
+        <input type="text" name="nombre" class="form-control" />
+        <label>Imagen</label>
+        <input type="text" name="imagen" class="form-control" />
+        <label>Descripcion</label>
+        <input type="text" name="descripcion" class="form-control" />
+        <button class="btn btn-success">
+            Create Comic
+        </button>
+    </form>
+    <hr/>
+    <h1>Create lambda</h1>
+    <form method="post" asp-action="CreateLambda">
+        <input type="hidden" name="idComic" />
+        <label>Nombre</label>
+        <input type="text" name="nombre" class="form-control" />
+        <label>Imagen</label>
+        <input type="text" name="imagen" class="form-control" />
+        <label>Descripcion</label>
+        <input type="text" name="descripcion" class="form-control" />
+        <button class="btn btn-success">
+            Create Comic
+        </button>
+    </form>
+</div>
